@@ -1,0 +1,95 @@
+/* Card grid */
+.card-list {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+/* Card */
+.card {
+  position: relative;
+  padding: 16px;
+  border-radius: 18px;
+  background: var(--card);
+  border: 1px solid var(--cardBorder);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  cursor: default;
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background 220ms ease;
+  backdrop-filter: blur(10px);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(124, 221, 255, 0.45);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.card__glow {
+  position: absolute;
+  inset: -40% -40% auto -40%;
+  height: 180px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(124, 221, 255, 0.35),
+    transparent 58%
+  );
+  pointer-events: none;
+  transform: translateZ(0);
+}
+
+.card__avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card__img {
+  width: 86px;
+  height: 86px;
+  image-rendering: auto;
+  display: block;
+}
+
+.card__body {
+  margin-top: 12px;
+}
+
+.card__name {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+  font-weight: 800;
+}
+
+.card__meta {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.card__label {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.card__link {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(124, 221, 255, 0.5);
+}
+
+.card__link:hover {
+  color: rgba(124, 221, 255, 0.95);
+}
